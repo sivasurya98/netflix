@@ -1,0 +1,21 @@
+.account-img-container{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    /* margin-top: 10rem; */
+}
+.total-image-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.question-para{
+    color: #fff;
+    font-family: Outfit,sans-serif;
+    font-size: 25px;
+}
+.watching-container{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,28 @@
+.nav-container{
+    display: flex;
+    gap: 1rem;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* .button-container{
+    color: white;
+    margin-top: 1rem;
+    display: flex;
+    gap: 3rem;
+    margin-right: 5rem;
+} */
+.button1-cont{
+    display: flex;
+    gap: 3rem;
+    color: white;
+    margin-top: 1rem;
+    margin-right: 5rem;
+}
+.link{
+    margin-top: 1rem;
+    text-decoration: none;
+    color: white;
+}

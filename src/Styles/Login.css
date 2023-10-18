@@ -1,0 +1,91 @@
+.login-container{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.option-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    gap: 1.5rem;
+}
+.button-cont{
+    background-color: #E50913;
+    color: white;
+    padding: 7px;
+    border: none;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.language-cont{
+    background-color: #12120F;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
+.netflix-image-container{
+    border-radius: 1rem;
+    margin-left: 2rem;
+}
+.login-image{
+    margin-left: 1rem;
+}
+.images-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.banner-container{
+    background-image: url("https://netflsix.web.app/static/media/background.ce56bd3c88968a0b8b57.jpg");
+    padding-top: 60px;
+    width: 95vw;
+    height: 100vh;
+    border-radius: 1rem;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: cover;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: darken;
+}
+.total-container{
+    margin-left: 3rem;
+    width: 50%;
+}
+.banner-title{
+    color: #fff;
+    font-family: Outfit,sans-serif;
+    font-size: 55px;
+    font-weight: 900;
+}
+.banner-title1{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+.button-getstart{
+    background-color: #E50913;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 3rem;
+    width: 10rem;
+    cursor: pointer;
+}
+.input-container{
+    display: flex;
+    gap: 1rem;
+}
+.email-input{
+    padding: 9px;
+    width: 20rem;
+    height: 2rem;
+    background-color: #0F0F0F;
+    border: none;
+}

@@ -1,0 +1,13 @@
+.tvshowes-container{
+    background-color: #00081d;
+    color: white;
+}
+.show-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: white;
+}
+.show-poster{
+    flex: 0 0 calc(33.333% - 20px);
+}

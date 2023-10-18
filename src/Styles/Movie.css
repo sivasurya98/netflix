@@ -1,0 +1,16 @@
+.teaser-video{
+    width: '100%';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.movie-container{
+  height: 100vh;
+}
+.movie-container iframe {
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}

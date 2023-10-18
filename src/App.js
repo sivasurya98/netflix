@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import navigation from './utils/data';
+import Home from './Pages/Home';
+import Navbar from './Pages/Navbar';
+import Search from './Pages/Search';
+import Tvshowes from './Pages/Tvshowes';
+import Login from './Pages/Login';
+import Account from './Pages/Account';
+import React from 'react'
+import Movie from './Pages/Movie';
+import { useParams } from 'react-router-dom';
 
 function App() {
+  // const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const isnavbar = window.location.pathname === '/home'
+  const { movieid } = useParams()
+  console.log(isnavbar, movieid  )
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        { <Navbar data={navigation} />}
+        <Routes>
+          <Route path='/home' element={<Home />} />
+          <Route path='/search' element={<Search />} />
+          <Route path='/tvshowes' element={<Tvshowes />} />
+          <Route path='/account' element={<Account />} />
+          <Route path='/login' element={<Login />}/>
+          <Route path='/movies' element={<Movie />}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
