@@ -45,12 +45,11 @@ function Home() {
         {console.log(movies)}
         {movies.map((movie) => (
           <div className="movie-card">
-            <div key={movie.id} className="movie-poster"
-              onClick={() => movieshow(movie.id, movie.title)}>
-              <h2>{movie.title}</h2>
-              <img width={300} src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt={movie.title} />
+            <div key={movie.id}>
+              <h5>{movie.title}</h5>
+              <img className="movie-poster" onClick={() => movieshow(movie.id, movie.title)} width={300} src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt={movie.title} />
               <h6>{`Movie-rating-${movie.vote_average}`}</h6>
-              <p>{movie.overview}</p>
+              {/* <p>{movie.overview}</p> */}
             </div>
           </div>
         ))}

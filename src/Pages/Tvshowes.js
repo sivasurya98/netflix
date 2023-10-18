@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../Styles/Tvshowes.css'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function Tvshowes() {
     const [tvshow, settvshow] =useState([])
@@ -17,8 +18,10 @@ function Tvshowes() {
         })
     }, [])
     console.log(tvshow)
+    const navigate = useNavigate()
     const ontvshow = (id) => {
         setshowid(id)
+        navigate('/movies', {state: {showes: id}})
     }
     console.log(showid)
   return (

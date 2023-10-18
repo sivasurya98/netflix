@@ -12,6 +12,8 @@ function Movie() {
   useEffect(() => {
   const movieid = location.state.trailer
   const moviename = location.state.moviename
+  const tvshowid = location.state.showes
+  console.log(tvshowid)
   setname(moviename)
     const apikey = 'f89b235e1c3b074c77c22a21e974d237';
     const apiurl = `https://api.themoviedb.org/3/movie/${movieid}/videos?language=en-US&api_key=${apikey}`;
@@ -22,7 +24,16 @@ function Movie() {
       .catch((error) => {
         console.error('error fetching videos', error);
       });
-}, [location.state.trailer,location.state.moviename ]);
+      const apikeyshow = 'f89b235e1c3b074c77c22a21e974d237';
+      const apiurlshow = `https://api.themoviedb.org/3/tv/${tvshowid}/videos?language=en-US&api_key=${apikeyshow}`;
+      axios.get(apiurlshow)
+      .then((response) => {
+        setVideos(response.data.results);
+      })
+      .catch((error) => {
+        console.error('error fetching videos', error);
+      });
+}, [location.state.trailer,location.state.moviename, location.state.showes]);
 useEffect(() => {
   const movieid = location.state.trailer
   const apikey = 'f89b235e1c3b074c77c22a21e974d237';
