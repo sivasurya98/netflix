@@ -26,7 +26,22 @@
 .similar-movie-card {
   margin: 10px;
   display: inline-block;
+  animation: initial-animation 1s ease-in-out;
+  transition: 1s;
   width: 300px;
+}
+.similar-movie-card:hover {
+  transform: scale(1.2);
+  background-blend-mode: darken;
+}
+
+@keyframes initial-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .similar-movie-card h2 {

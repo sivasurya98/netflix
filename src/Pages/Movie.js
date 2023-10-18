@@ -8,13 +8,24 @@ function Movie() {
   const [name, setname] = useState('')
   const [simlarvideos, setsimliarvideos] = useState([])
   const [simvideo, setsimvideo] = useState([])
-  const location = useLocation()  
+  const [simvido, setsimvido] = useState([])
+  const [simmoviename, setsimmoviename] = useState('')
+  const location = useLocation()
+  console.log(simvido)
   useEffect(() => {
   const movieid = location.state.trailer
   const moviename = location.state.moviename
   const tvshowid = location.state.showes
-  console.log(tvshowid)
   setname(moviename)
+    const apikeysim = 'f89b235e1c3b074c77c22a21e974d237';
+    const apiurlsim = `https://api.themoviedb.org/3/movie/${simvideo}/videos?language=en-US&api_key=${apikeysim}`;
+    axios.get(apiurlsim)
+      .then((response) => {
+        setsimvido(response.data.results);
+      })
+      .catch((error) => {
+        console.error('error fetching videos', error);
+      }); 
     const apikey = 'f89b235e1c3b074c77c22a21e974d237';
     const apiurl = `https://api.themoviedb.org/3/movie/${movieid}/videos?language=en-US&api_key=${apikey}`;
     axios.get(apiurl)
@@ -33,7 +44,7 @@ function Movie() {
       .catch((error) => {
         console.error('error fetching videos', error);
       });
-}, [location.state.trailer,location.state.moviename, location.state.showes]);
+}, [location.state.trailer,location.state.moviename, location.state.showes, simvideo]);
 useEffect(() => {
   const movieid = location.state.trailer
   const apikey = 'f89b235e1c3b074c77c22a21e974d237';
@@ -46,11 +57,19 @@ useEffect(() => {
     console.error('error fetching simliar videos', error)
   }))
 }, [location.state.trailer])
-const onsimclick = (id) => {
+const onsimclick = (id, name) => {
   setsimvideo(id)
+  setsimmoviename(name)
 }
-console.log(simvideo)
-const trailer = videos.filter(movie => movie.name === "Official Trailer")
+let trailer = videos.filter(movie => movie.name === "Official Trailer")
+if(simvido.length !== 0){
+  trailer = simvido.filter(movie => movie.type === "Trailer")
+}
+console.log(trailer)
+let moviename = name
+if(simvideo.length !==0){
+  moviename = simmoviename
+} 
   return (
     <div className="movie-container" style={{ width: '100%' }}>
       <div className='button-container'>
@@ -60,7 +79,7 @@ const trailer = videos.filter(movie => movie.name === "Official Trailer")
           <button className='buttonscont'>More Info</button>
         </div>
       </div>
-      <h2 style={{ color: 'white', textAlign: 'center' }}>{name}</h2>
+      <h2 style={{ color: 'white', textAlign: 'center' }}>{moviename}</h2>
     {trailer.map((video) => (
       <div key={video.key} className="teaser-video">
        <iframe
@@ -84,7 +103,7 @@ const trailer = videos.filter(movie => movie.name === "Official Trailer")
                 <div className="image-container">
                   <img
                     width={300}
-                    onClick={() => onsimclick(movie.id)}
+                    onClick={() => onsimclick(movie.id, movie.title)}
                     src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
                     alt={movie.title}
                   />

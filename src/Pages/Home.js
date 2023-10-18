@@ -42,11 +42,8 @@ function Home() {
       </div>
       <h1>Popular Movies</h1>
       <div className="movie-poster-container">
-        {console.log(movies)}
         {movies.map((movie) => (
           <div className="movie-card">
-            <br />
-            <br />
             <br />
             <br />
             <div key={movie.id}>
@@ -62,4 +59,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;
