@@ -45,6 +45,10 @@ function Home() {
         {console.log(movies)}
         {movies.map((movie) => (
           <div className="movie-card">
+            <br />
+            <br />
+            <br />
+            <br />
             <div key={movie.id}>
               <h5>{movie.title}</h5>
               <img className="movie-poster" onClick={() => movieshow(movie.id, movie.title)} width={300} src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt={movie.title} />

@@ -74,25 +74,28 @@ const trailer = videos.filter(movie => movie.name === "Official Trailer")
       ></iframe>
       </div>
     ))}
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <div className='home-container'>
-    <h2 style={{ color: 'white' }}>simliar Movies</h2>
-      <div className="movie-poster-container">
+      <div className='similar-movie-container'>
+        <h2 style={{ color: 'white' }}>Similar Movies</h2>
+        <div className="similar-poster-container">
           {simlarvideos.map((movie) => (
-            <div className="movie-card">
-              <div key={movie.id} className="movie-poster">
-                <h2>{movie.title}</h2>
-                <img width={300} onClick={()=> onsimclick(movie.id)} src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt={movie.title} />
-                <p style={{ color: 'white' }}>{movie.overview}</p>
+            <div className="similar-movie-card" key={movie.id}>
+              <div className="similar-movie-poster">
+                <h2 style={{ color: 'white', marginBottom: '10px' }}>{movie.title}</h2>
+                <div className="image-container">
+                  <img
+                    width={300}
+                    onClick={() => onsimclick(movie.id)}
+                    src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
+                    alt={movie.title}
+                  />
+                </div>
+                <p style={{ color: 'white', marginTop: '10px' }}>{movie.overview}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
+
   </div>
   
   );
