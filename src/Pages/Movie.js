@@ -108,7 +108,7 @@ if(simvideo.length !==0){
                     alt={movie.title}
                   />
                 </div>
-                <p style={{ color: 'white', marginTop: '10px' }}>{movie.overview}</p>
+                {/* <p style={{ color: 'white', marginTop: '10px' }}>{movie.overview}</p> */}
               </div>
             </div>
           ))}

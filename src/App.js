@@ -19,13 +19,13 @@ function App() {
   return (
     <div>
       <Router>
-        { <Navbar data={navigation} />}
+        {isnavbar && <Navbar data={navigation} />}
         <Routes>
+          <Route path='/' element={<Login />}/>
+          <Route path='/account' element={<Account />} />
           <Route path='/home' element={<Home />} />
           <Route path='/search' element={<Search />} />
           <Route path='/tvshowes' element={<Tvshowes />} />
-          <Route path='/account' element={<Account />} />
-          <Route path='/login' element={<Login />}/>
           <Route path='/movies' element={<Movie />}/>
         </Routes>
       </Router>

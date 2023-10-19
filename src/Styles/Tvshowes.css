@@ -1,13 +1,47 @@
-.tvshowes-container{
+.tvshow-container{
     background-color: #00081d;
     color: white;
+    width: 100%;
 }
 .show-container{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1rem;
     color: white;
 }
 .show-poster{
     flex: 0 0 calc(33.333% - 20px);
 }
+.show-movie-card {
+    margin: 10px;
+    display: inline-block;
+    animation: initial-animation 1s ease-in-out;
+    transition: 1s;
+    width: 300px;
+  }
+  .show-movie-card:hover {
+    transform: scale(1.2);
+    background-blend-mode: darken;
+  }
+  @keyframes initial-animation {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .show-movie-card h2 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .show-movie-card p {
+    font-size: 14px;
+    line-height: 1.3;
+    height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }

@@ -29,10 +29,14 @@ function Tvshowes() {
         <h2 style={{ color: 'white' }}>Tv Showes</h2>
         <div className='show-container'>
             {tvshow.map((show)=>(
-                <div className='show-poster' onClick={() => ontvshow(show.id)}>
-                    <h2>{show.name}</h2>
-                    <img width={300} src={`https://image.tmdb.org/t/p/w500/${show.backdrop_path}`} alt={show.title} />
-                    {/* <p>{show.overview}</p> */}
+                <div className='show-movie-card' key={show.id}>
+                    <div className='show-poster' onClick={() => ontvshow(show.id)}>
+                        <h2>{show.name}</h2>
+                        <div className="image-container">
+                          <img width={300} src={`https://image.tmdb.org/t/p/w500/${show.backdrop_path}`} alt={show.title} />
+                        </div>
+                        {/* <p>{show.overview}</p> */}
+                    </div>
                 </div>
             ))}
         </div>

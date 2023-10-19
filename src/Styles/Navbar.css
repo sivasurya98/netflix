@@ -1,11 +1,13 @@
 .nav-container{
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 .container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 /* .button-container{
     color: white;
@@ -16,10 +18,11 @@
 } */
 .button1-cont{
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
     color: white;
     margin-top: 1rem;
     margin-right: 5rem;
+    flex-wrap: wrap;
 }
 .link{
     margin-top: 1rem;
